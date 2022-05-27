@@ -15,12 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
  * Use the [SwipingFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class SwipingFragment : Fragment(), CardStackListener{
 
     private lateinit var cardStackView : CardStackView
     val manager by lazy { CardStackLayoutManager(context, this) }
-    private val adapter  by lazy { CardStackAdapter(createSpots()) }
+    private val adapter by lazy { CardStackAdapter(createSpots()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,14 +42,6 @@ class SwipingFragment : Fragment(), CardStackListener{
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SwipingFragment.
-         */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
