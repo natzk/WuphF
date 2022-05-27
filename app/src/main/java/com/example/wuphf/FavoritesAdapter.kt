@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wuphf.databinding.FavoriteItemLayoutBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Adapt to FavoriteItem
+
 
 class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val listener : FavoriteListener) : RecyclerView.Adapter<FavoritesAdapter.ItemViewHolder>() {
 

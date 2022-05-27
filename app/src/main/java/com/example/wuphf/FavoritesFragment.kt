@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.wuphf.databinding.FragmentFavoritesBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Adapt to FavoritesAdapter
 
+@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
 
     private var _binding : FragmentFavoritesBinding? = null
