@@ -1,6 +1,7 @@
 package com.example.wuphf
 
 data class AllDogs(
-    val results : List<Dog>
+    //https://dog.ceo/api/breed/hound/images
+    val message : List<String>
 ) {
 }
