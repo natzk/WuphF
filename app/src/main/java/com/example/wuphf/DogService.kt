@@ -9,5 +9,5 @@ interface DogService {
     suspend fun getAllDogs() : Response<AllDogs>
 
     @GET(Constants.BASE_URL)
-    suspend fun getDog() : Response<Dog>
+    suspend fun getDog(message : String) : Response<Dog>
 }

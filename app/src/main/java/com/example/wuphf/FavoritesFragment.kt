@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Adapt to FavoritesAdapter
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
 
     private var _binding : FragmentFavoritesBinding? = null
