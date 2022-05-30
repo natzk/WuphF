@@ -1,5 +1,6 @@
 package com.example.wuphf
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,9 @@ class CardStackAdapter(
         Glide.with(holder.image)
             .load(spots.get(position))
             .into(holder.image)
-//        holder.image.setImageResource(R.drawable.dice_temp_test)
+
+        holder.image.layoutParams.height = 1300
+        holder.image.scaleType = ImageView.ScaleType.FIT_XY
 
         holder.itemView.setOnClickListener { v ->
 //            Toast.makeText(v.context, pic, Toast.LENGTH_SHORT).show()
