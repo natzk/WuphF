@@ -1,12 +1,14 @@
-package com.example.wuphf
+package ui
 
 import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.example.wuphf.FavoritesFragment
 import com.example.wuphf.databinding.ActivityMainBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.wuphf.R
+import com.example.wuphf.SwipingFragment
 
 //@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
