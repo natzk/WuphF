@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wuphf.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,8 +35,9 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        binding.recycler.layoutManager = GridLayoutManager(requireContext(),3 )
-        binding.recycler.adapter = FavoritesAdapter(favoriteList,object : FavoritesAdapter.FavoriteListener {
+        val recycler = requireView().findViewById<RecyclerView>(R.id.recycler)
+        recycler.layoutManager = GridLayoutManager(requireActivity(), 3)
+        recycler.adapter = FavoritesAdapter(favoriteList,object : FavoritesAdapter.FavoriteListener {
             override fun onContactClicked(index: Int) {
                 // TODO: Implement this method
             }
