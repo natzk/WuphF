@@ -24,10 +24,6 @@ class FaqsFragment : Fragment() {
     private var param2: String? = null
 
 
-//    private var _binding: FragmentFaqsBinding? = null
-//    private val binding get() = _binding!!
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -38,10 +34,18 @@ class FaqsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        _binding = FragmentFaqsBinding.inflate(inflater, container, false)
-//        binding.faqs.LayoutManager = LinearLayoutManager(requireActivity())
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_faqs, container, false)
+    }
+
+    companion object {
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            FaqsFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
     }
 
 

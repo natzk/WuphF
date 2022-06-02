@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     tools:context=".FaqsFragment">
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,13 +47,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="What is Wuphf?"
+                        android:text="@string/question1"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="a bullshit we are forced to do for school (((:"
+                        android:text="@string/answer1"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -75,13 +76,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="How do I measure my dog's shoe size?"
+                        android:text="@string/question2"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="with a pink pencil"
+                        android:text="@string/answer2"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -104,13 +105,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Do dogs use the same conditioner as humans?"
+                        android:text="@string/question3"
                         android:textStyle="bold"
                         android:textSize="17sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Yes, but try to avoid head n' shoulders"
+                        android:text="@string/answer3"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -133,13 +134,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="What'better- Dogs or Iguanas?"
+                        android:text="@string/question4"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="no"
+                        android:text="@string/answer4"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -162,13 +163,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Can I adopt a robot here?"
+                        android:text="@string/question5"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="No"
+                        android:text="@string/answer5"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -191,13 +192,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Can I adopt a Dinosaur here??"
+                        android:text="@string/question6"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Only female dinosaur"
+                        android:text="@string/answer6"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -220,13 +221,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Can I adopt an alian here???"
+                        android:text="@string/question7"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Absolutely"
+                        android:text="@string/answer7"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -249,13 +250,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dogs prefer potatoes or sweet potatoes?"
+                        android:text="@string/question8"
                         android:textStyle="bold"
                         android:textSize="20sp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="When fried, they prefer sweet potatoes, but when cooked in water- potatoes."
+                        android:text="@string/answer8"
                         android:textSize="16sp"/>
                 </LinearLayout>
 

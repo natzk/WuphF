@@ -16,6 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 //@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
 
+
+
     private var _binding : FragmentFavoritesBinding? = null
     private val binding get() = _binding!!
 
@@ -26,6 +28,17 @@ class FavoritesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_favorites, container, false)
+    }
+
+    companion object {
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            FavoritesFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

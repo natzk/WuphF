@@ -15,7 +15,8 @@
         android:name=".MyApplication"
         android:theme="@style/Theme.WuphF">
         <activity
-            android:name=".MainActivity"
+            android:name="ui.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
