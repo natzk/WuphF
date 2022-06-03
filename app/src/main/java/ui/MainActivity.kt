@@ -1,6 +1,6 @@
 package ui
 
-import android.R
+
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.wuphf.FaqsFragment
 import com.example.wuphf.FavoritesFragment
+import com.example.wuphf.R
 import com.example.wuphf.SwipingFragment
 import com.example.wuphf.databinding.ActivityMainBinding
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_favorites-> {
-                    openFragment(FavoritesFragment(), "Opening the Swiping Fragment")
+                    openFragment(FavoritesFragment(), "Opening the favorites Fragment")
                     if (drawer.isDrawerOpen(GravityCompat.START)) {
                         drawer.closeDrawer(GravityCompat.START)
                     }
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_faqs-> {
-                    openFragment(FaqsFragment(), "Opening the Swiping Fragment")
+                    openFragment(FaqsFragment(), "Opening the Faqs Fragment")
                     if (drawer.isDrawerOpen(GravityCompat.START)) {
                         drawer.closeDrawer(GravityCompat.START)
                     }
@@ -75,8 +76,6 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
     }
-
-
 
     override fun onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
