@@ -8,9 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wuphf.databinding.FavoriteItemLayoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Adapt to FavoriteItem
-
-
 class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val listener : FavoriteListener) : RecyclerView.Adapter<FavoritesAdapter.ItemViewHolder>() {
 
     interface FavoriteListener  {
@@ -44,13 +41,12 @@ class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val lis
         }
 
         fun bind(favoriteItem: FavoriteItem) {
-            binding.favoriteName.text = favoriteItem.name
-            binding.favoriteImage.text = favoriteItem.number
-            binding.favoriteImage.text = favoriteItem.imageUri
+//            binding.favoriteName.text = favoriteItem.name
+//            binding.favoriteImage.text = favoriteItem.number
 
             // TODO: Make image work
-            // if (favoriteItem.imageUri != null) binding.favoriteImage.setImageURI(Uri.parse(favoriteItem.imageUri))
-            // else binding.favoriteImage.setImageResource(R.mipmap.ic_launcher_round)
+            if (favoriteItem.imageUri != null) binding.favoriteImage.setImageURI(Uri.parse(favoriteItem.imageUri))
+            else binding.favoriteImage.setImageResource(R.mipmap.ic_launcher_round)
         }
     }
 }

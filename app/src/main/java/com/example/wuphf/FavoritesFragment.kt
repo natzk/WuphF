@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,8 +17,6 @@ import dagger.hilt.android.AndroidEntryPoint
 //@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
 
-
-
     private var _binding : FragmentFavoritesBinding? = null
     private val binding get() = _binding!!
 
@@ -27,7 +26,8 @@ class FavoritesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
+        _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     companion object {
@@ -44,18 +44,31 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
-        // initContactList()
+        initFavoriteList()
     }
 
     private fun initRecycler() {
-        val recycler = requireView().findViewById<RecyclerView>(R.id.recycler)
+        val recycler = binding.recycler
         recycler.layoutManager = GridLayoutManager(requireActivity(), 3)
         recycler.adapter = FavoritesAdapter(favoriteList,object : FavoritesAdapter.FavoriteListener {
             override fun onContactClicked(index: Int) {
-                // TODO: Implement this method
+                Toast.makeText(requireContext(), "Not implemented yet!", Toast.LENGTH_SHORT).show()
             }
             override fun onContactLongClicked(index: Int) {
             }
         })
+    }
+
+    private fun initFavoriteList() {
+        val favTest = FavoriteItem("test", "test", null)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        favoriteList.add(favTest)
+        binding.recycler.adapter?.notifyDataSetChanged()
     }
 }
