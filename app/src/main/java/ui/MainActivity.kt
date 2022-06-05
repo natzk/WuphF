@@ -15,8 +15,9 @@ import com.example.wuphf.R
 import com.example.wuphf.SwipingFragment
 import com.example.wuphf.databinding.ActivityMainBinding
 import com.example.wuphf.favorites.FavoritesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var drawer: DrawerLayout
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         val toolbar = binding.toolbar
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         drawer = binding.drawerLayout
 
         val navigationView = binding.navView
