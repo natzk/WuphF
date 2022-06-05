@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         initToolbar()
     }
 
-    private fun openFragment(fragment: Fragment, tag: String) {
+    fun openFragment(fragment: Fragment, tag: String) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_container, fragment, tag)
         transaction.addToBackStack(tag)
@@ -85,7 +85,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     true
                 }
-
 
                 else -> {
                     if (drawer.isDrawerOpen(GravityCompat.START)) {

@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.wuphf.databinding.FragmentFavoritesBinding
+import ui.MainActivity
 
 //@AndroidEntryPoint
 class FavoritesFragment : Fragment() {
@@ -43,8 +45,8 @@ class FavoritesFragment : Fragment() {
         binding.recycler.layoutManager = GridLayoutManager(requireActivity(), 3)
         binding.recycler.adapter = FavoritesAdapter(list, object : FavoritesAdapter.FavoriteListener {
             override fun onFavoriteItemClicked(index: Int) {
-                addTestFavoriteDog()
-                binding.recycler.adapter?.notifyDataSetChanged()
+                viewModel.select(index)
+                (activity as MainActivity).openFragment(DogInfoFragment(), "Opening DogInfoFragment")
             }
             override fun onFavoriteItemLongClicked(index: Int) {
             }
