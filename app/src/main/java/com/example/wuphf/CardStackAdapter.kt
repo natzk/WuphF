@@ -7,14 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 
 class CardStackAdapter(
-    private var spots : List<String> = emptyList()
+    private var spots: List<String> = emptyList()
+
 
 ) : RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
+    val pos1 : MutableLiveData<Int>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -22,12 +25,13 @@ class CardStackAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val spot = spots[position]
+        val pos2 = spots[position]
 //        holder.name.text = "${spot.id}. ${spot.name}"
 //        holder.city.text = spot.city
 //        Picasso.get().load("https://dog.ceo/api/breeds/image/random").into(holder.image)
 //        Picasso.get().load("https://source.unsplash.com/THozNzxEP3g/600x800").into(holder.image)
 //        val pic  = Picasso.get().load(spots.get).toString()
+
 
         Glide.with(holder.image)
             .load(spots.get(position))
@@ -54,10 +58,12 @@ class CardStackAdapter(
         return spots
     }
 
+
+
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name: TextView = view.findViewById(R.id.item_name)
-        var city: TextView = view.findViewById(R.id.item_city)
         var image: ImageView = view.findViewById(R.id.item_image)
+//        var pos : SwipingFragment? = null
     }
 
 }

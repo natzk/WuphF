@@ -23,5 +23,12 @@ object AppModule {
     }
 
     @Provides
+    @Singleton
     fun provideGson() : Gson = GsonBuilder().create()
+
+    @Provides
+    @Singleton
+    fun provideDogService(retrofit: Retrofit): DogService{
+        return retrofit.create(DogService::class.java)
+    }
 }

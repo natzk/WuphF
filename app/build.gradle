@@ -2,7 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    //id 'dagger.hilt.android.plugin'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -52,6 +53,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //for the swiping
     implementation 'com.yuyakaido.android:card-stack-view:2.3.4'
+
 
 
     //Retrofit
