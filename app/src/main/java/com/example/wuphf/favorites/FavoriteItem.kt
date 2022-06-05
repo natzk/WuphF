@@ -1,4 +1,4 @@
-package com.example.wuphf
+package com.example.wuphf.favorites
 
 data class FavoriteItem(
     val name: String,

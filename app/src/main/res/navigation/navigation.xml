@@ -6,7 +6,7 @@
     app:startDestination="@id/swipingFragment">
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.wuphf.FavoritesFragment"
+        android:name="com.example.wuphf.favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment

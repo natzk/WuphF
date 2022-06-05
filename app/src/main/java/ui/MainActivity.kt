@@ -9,7 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.wuphf.FaqsFragment
-import com.example.wuphf.FavoritesFragment
+import com.example.wuphf.favorites.FavoritesFragment
 import com.example.wuphf.R
 import com.example.wuphf.SwipingFragment
 import com.example.wuphf.databinding.ActivityMainBinding

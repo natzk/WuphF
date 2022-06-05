@@ -1,18 +1,18 @@
-package com.example.wuphf
+package com.example.wuphf.favorites
 
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wuphf.R
 import com.example.wuphf.databinding.FavoriteItemLayoutBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val listener : FavoriteListener) : RecyclerView.Adapter<FavoritesAdapter.ItemViewHolder>() {
 
     interface FavoriteListener  {
-        fun onContactClicked(index: Int)
-        fun onContactLongClicked(index: Int)
+        fun onFavoriteItemClicked(index: Int)
+        fun onFavoriteItemLongClicked(index: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -32,11 +32,11 @@ class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val lis
         }
 
         override fun onClick(p0: View?) {
-            listener.onContactClicked(adapterPosition)
+            listener.onFavoriteItemClicked(adapterPosition)
         }
 
         override fun onLongClick(p0: View?): Boolean {
-            listener.onContactLongClicked(adapterPosition)
+            listener.onFavoriteItemLongClicked(adapterPosition)
             return true
         }
 
