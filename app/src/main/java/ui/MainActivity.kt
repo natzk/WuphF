@@ -13,6 +13,7 @@ import com.example.wuphf.favorites.FavoritesFragment
 import com.example.wuphf.R
 import com.example.wuphf.SwipingFragment
 import com.example.wuphf.databinding.ActivityMainBinding
+import com.example.wuphf.favorites.FavoritesViewModel
 
 //@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -21,12 +22,38 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainBinding
 
+    private lateinit var favoritesViewModel : FavoritesViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val root = binding.root
         setContentView(root)
+
         initUI()
+    }
+
+    override fun onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    private fun initUI() {
+        openFragment(SwipingFragment(), "Opening the Swiping Fragment")
+        initToolbar()
+    }
+
+    private fun openFragment(fragment: Fragment, tag: String) {
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.main_container, fragment, tag)
+        transaction.addToBackStack(tag)
+        transaction.commit()
+    }
+
+    private fun initToolbar() {
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
         drawer = binding.drawerLayout
@@ -74,33 +101,5 @@ class MainActivity : AppCompatActivity() {
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
-
     }
-
-    override fun onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-    private fun initUI() {
-        openFragment(SwipingFragment(), "Opening the Swiping Fragment")
-//        initFavoritesButton()
-    }
-
-    private fun openFragment(fragment: Fragment, tag: String) {
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.main_container, fragment, tag)
-        transaction.addToBackStack(tag)
-        transaction.commit()
-    }
-
-//    private fun initFavoritesButton() {
-//        val favoritesButton = binding.favoritesButton
-//        favoritesButton.setOnClickListener {
-//            openFragment(FavoritesFragment(), "Opening the FavoritesFragment")
-//        }
-//    }
 }
