@@ -41,10 +41,6 @@ class FavoritesAdapter(private val favorites:List<FavoriteItem>, private val lis
         }
 
         fun bind(favoriteItem: FavoriteItem) {
-//            binding.favoriteName.text = favoriteItem.name
-//            binding.favoriteImage.text = favoriteItem.number
-
-            // TODO: Make image work
             if (favoriteItem.imageUri != null) binding.favoriteImage.setImageURI(Uri.parse(favoriteItem.imageUri))
             else binding.favoriteImage.setImageResource(R.mipmap.ic_launcher_round)
         }

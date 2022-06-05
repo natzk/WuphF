@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.example.wuphf.FaqsFragment
 import com.example.wuphf.favorites.FavoritesFragment
 import com.example.wuphf.R
@@ -19,7 +20,6 @@ import com.example.wuphf.favorites.FavoritesViewModel
 class MainActivity : AppCompatActivity() {
 
     lateinit var drawer: DrawerLayout
-
     lateinit var binding : ActivityMainBinding
 
     private lateinit var favoritesViewModel : FavoritesViewModel
@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(root)
 
         initUI()
+        initViewModels()
     }
 
     override fun onBackPressed() {
@@ -101,5 +102,9 @@ class MainActivity : AppCompatActivity() {
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
+    }
+
+    private fun initViewModels() {
+        favoritesViewModel = ViewModelProvider(this)[FavoritesViewModel::class.java]
     }
 }
