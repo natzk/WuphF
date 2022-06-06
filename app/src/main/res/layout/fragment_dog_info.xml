@@ -69,6 +69,10 @@
                 android:text="Information: Much cute, very wow!"
                 android:textSize="20sp" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
             <Button
                 android:id="@+id/remove_button"
                 android:text="Remove from favorites"
@@ -78,6 +82,18 @@
                 android:padding="10dp"
                 android:layout_margin="20dp"
                 />
+
+                <Button
+                    android:id="@+id/pic"
+                    android:text="pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_margin="20dp"
+                    />
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
