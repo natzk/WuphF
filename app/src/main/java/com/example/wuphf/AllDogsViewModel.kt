@@ -9,6 +9,4 @@ class AllDogsViewModel @Inject constructor(private val dogRemoteDataSource: DogR
 
     suspend fun getAllDogsRDS() = dogRemoteDataSource.getDogs()
 
-
-
 }
