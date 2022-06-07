@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/dogInfoFragment">
+    app:startDestination="@id/swipingFragment">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.wuphf.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
     <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.example.wuphf.favorites.FavoritesFragment"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" >
+        android:id="@+id/swipingFragment"
+        android:name="com.example.wuphf.ui.allDogsFragment.SwipingFragment"
+        android:label="fragment_swiping"
+        tools:layout="@layout/fragment_swiping" >
         <action
-            android:id="@+id/action_favoritesFragment_to_dogInfoFragment"
-            app:destination="@id/dogInfoFragment" />
+            android:id="@+id/action_swipingFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/dogInfoFragment"
-        android:name="com.example.wuphf.favorites.DogInfoFragment"
-        android:label="fragment_dog_info"
-        tools:layout="@layout/fragment_dog_info" />
 </navigation>
