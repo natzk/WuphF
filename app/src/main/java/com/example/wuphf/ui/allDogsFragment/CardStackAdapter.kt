@@ -1,6 +1,5 @@
 package com.example.wuphf.ui.allDogsFragment
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -36,15 +35,6 @@ class CardStackAdapter(val context: Context): RecyclerView.Adapter<CardStackAdap
     override fun getItemCount(): Int {
         return spots.size
     }
-
-    fun setSpots(spots: List<String>) {
-        this.spots = spots
-    }
-
-    fun getSpots(): List<String> {
-        return spots
-    }
-
 
     fun changeData(data: List<String>){
         spots = data

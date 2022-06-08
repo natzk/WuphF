@@ -1,7 +1,5 @@
 package com.example.wuphf.ui.allDogsFragment
 
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,7 +15,6 @@ import javax.inject.Inject
 class AllDogViewModel @Inject constructor(val dogRepository: DogRepository) : ViewModel() {
 
     var dogList: MutableLiveData<Resource<AllDogs>> = MutableLiveData()
-    var search: AllDogs ?= null
 
 
 
