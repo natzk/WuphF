@@ -10,4 +10,6 @@
     <color name="grey">#ebecf0</color>
     <color name="indigo_white">#ebf6f7</color>
     <color name="green">#4AA13C</color>
+    <color name="salmon">#FA8072</color>
+    <color name="indianRed">#CD5C5C</color>
 </resources>
