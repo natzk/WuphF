@@ -36,24 +36,4 @@ class FavoritesViewModel @Inject constructor(val dogRepository: DogRepository) :
         selectedDog = index
     }
 
-    /*
-    var favoritesList: MutableLiveData<MutableList<FavoriteItem>> = MutableLiveData()
-    private var selectedItem: MutableLiveData<Int> = MutableLiveData()
-
-    init {
-        favoritesList.value = mutableListOf()
-        selectedItem.value = 0
-    }
-
-    fun add(item: FavoriteItem) {
-        favoritesList.value?.add(item)
-    }
-
-    fun select(index: Int) {
-        selectedItem.value = index
-    }
-
-    fun removeSelectedItem() {
-        favoritesList.value?.removeAt(selectedItem.value!!)
-    }*/
 }

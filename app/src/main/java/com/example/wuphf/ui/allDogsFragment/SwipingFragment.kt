@@ -43,7 +43,7 @@ class SwipingFragment(): Fragment(), CardStackListener {
         super.onViewCreated(view, savedInstanceState)
 
         initialize()
-        allDogViewModels.getAllDogs()
+        allDogViewModels.getAllDogs() // getting the dogs from the API
         observeUI()
     }
     fun observeUI(){

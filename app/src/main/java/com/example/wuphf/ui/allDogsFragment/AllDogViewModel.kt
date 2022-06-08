@@ -1,5 +1,6 @@
 package com.example.wuphf.ui.allDogsFragment
 
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,12 +19,14 @@ class AllDogViewModel @Inject constructor(val dogRepository: DogRepository) : Vi
     var dogList: MutableLiveData<Resource<AllDogs>> = MutableLiveData()
     var search: AllDogs ?= null
 
+
+
     fun getAllDogs(){
         viewModelScope.launch {
             var response = dogRepository.getAllDogs()
 
             if(response.isSuccessful && response.body()?.status.equals("success")){
-                search = response.body()
+//                search = response.body()
                 dogList.postValue(Resource.Success(response.body()!!))
             }else{
                 dogList.postValue(Resource.Error(response.message()))
