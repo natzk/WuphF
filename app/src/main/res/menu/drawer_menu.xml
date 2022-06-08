@@ -17,5 +17,9 @@
             android:icon="@drawable/help"
             android:title="FAQs"/>
 
+        <item android:id="@+id/nav_events"
+            android:icon="@drawable/events"
+            android:title="Events"/>
+
     </group>
 </menu>

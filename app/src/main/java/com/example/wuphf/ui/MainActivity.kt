@@ -88,6 +88,14 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.nav_events-> {
+                    openFragment(EventsFragment(), "Opening the Events Fragment")
+                    if (drawer.isDrawerOpen(GravityCompat.START)) {
+                        drawer.closeDrawer(GravityCompat.START)
+                    }
+                    true
+                }
+
                 else -> {
                     if (drawer.isDrawerOpen(GravityCompat.START)) {
                         drawer.closeDrawer(GravityCompat.START)
