@@ -2,6 +2,7 @@ package com.example.wuphf.ui
 
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var drawer: DrawerLayout
     lateinit var binding : ActivityMainBinding
     lateinit var root : DrawerLayout
+    var tutorialFlag : Boolean? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private fun initUI() {
         openFragment(SwipingFragment(), "Opening the Swiping Fragment")
         initToolbar()
+        initTutorial()
     }
 
     fun openFragment(fragment: Fragment, tag: String) {
@@ -97,5 +100,14 @@ class MainActivity : AppCompatActivity() {
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
+    }
+
+    private fun initTutorial() {
+        if (tutorialFlag == null) {
+            Toast.makeText(this, "Swipe left to browse through dogs.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Swipe right to add a dog to favorites.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Enjoy! :)", Toast.LENGTH_LONG).show()
+            tutorialFlag = true
+        }
     }
 }

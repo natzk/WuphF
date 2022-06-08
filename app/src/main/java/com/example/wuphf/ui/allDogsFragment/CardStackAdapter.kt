@@ -26,7 +26,6 @@ class CardStackAdapter(val context: Context): RecyclerView.Adapter<CardStackAdap
             .load(spots.get(position))
             .into(holder.image)
 
-        holder.image.layoutParams.height = 1300
         holder.image.scaleType = ImageView.ScaleType.FIT_XY
 
         holder.itemView.setOnClickListener { v ->
