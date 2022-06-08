@@ -42,10 +42,4 @@ class AllDogViewModel @Inject constructor(val dogRepository: DogRepository) : Vi
         }
     }
 
-    fun fetch(message: String) {
-        viewModelScope.launch {
-            dogRepository.fetchFromFav(message)
-        }
-    }
-
 }
