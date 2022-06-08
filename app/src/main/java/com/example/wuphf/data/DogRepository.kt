@@ -33,4 +33,7 @@ class DogRepository @Inject constructor(
     suspend fun removeFromFav(dog: Dog) = withContext(Dispatchers.IO){
         dogDao.removeFromFavourite(dog)
     }
+    suspend fun fetchFromFav(message: String) = withContext(Dispatchers.IO){
+        dogDao.getDog(message)
+    }
 }
