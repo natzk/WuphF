@@ -50,6 +50,7 @@ class FavoritesFragment : Fragment(), FavoriteListener {
     }
 
     override fun onFavoriteItemClicked(index: Int) {
+        (requireActivity() as MainActivity).openFragment(DogInfoFragment(), "Opening Dog Info Fragment")
     }
 
     override fun onFavoriteItemLongClicked(index: Int) {
