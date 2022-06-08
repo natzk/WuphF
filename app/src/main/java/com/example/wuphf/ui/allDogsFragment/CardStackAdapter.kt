@@ -37,14 +37,6 @@ class CardStackAdapter(val context: Context): RecyclerView.Adapter<CardStackAdap
         return spots.size
     }
 
-    fun setSpots(spots: List<String>) {
-        this.spots = spots
-    }
-
-    fun getSpots(): List<String> {
-        return spots
-    }
-
     @SuppressLint("NotifyDataSetChanged")
     fun changeData(data: List<String>){
         spots = data

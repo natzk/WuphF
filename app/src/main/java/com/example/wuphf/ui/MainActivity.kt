@@ -8,13 +8,11 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModelProvider
 import com.example.wuphf.ui.favoritesFragment.FavoritesFragment
 import com.example.wuphf.R
 import com.example.wuphf.ui.allDogsFragment.SwipingFragment
 import com.example.wuphf.databinding.ActivityMainBinding
 import com.example.wuphf.ui.faqFragment.FaqsFragment
-import com.example.wuphf.ui.favoritesFragment.FavoritesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,8 +22,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
     lateinit var root : DrawerLayout
 
-    private lateinit var favoritesViewModel : FavoritesViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(root)
 
         initUI()
-        initViewModels()
     }
 
     override fun onBackPressed() {
@@ -58,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         val toolbar = binding.toolbar
-//        setSupportActionBar(toolbar)
         drawer = binding.drawerLayout
 
         val navigationView = binding.navView
@@ -103,9 +97,5 @@ class MainActivity : AppCompatActivity() {
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
-    }
-
-    private fun initViewModels() {
-        favoritesViewModel = ViewModelProvider(this)[FavoritesViewModel::class.java]
     }
 }

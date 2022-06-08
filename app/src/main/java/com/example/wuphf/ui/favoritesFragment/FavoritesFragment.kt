@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.wuphf.data.DogRepository
-import com.example.wuphf.data.local.model.Dog
 import com.example.wuphf.databinding.FragmentFavoritesBinding
 import com.example.wuphf.ui.MainActivity
-import com.example.wuphf.ui.allDogsFragment.CardStackAdapter
 import com.example.wuphf.ui.allDogsFragment.FavoriteListener
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,7 +49,7 @@ class FavoritesFragment : Fragment(), FavoriteListener {
 
     override fun onFavoriteItemClicked(index: Int) {
         favoritesViewModel.select(index)
-        (requireActivity() as MainActivity).openFragment(DogInfoFragment(), "Opening Dog Info Fragment")
+        (requireActivity() as MainActivity).openFragment(ShareDogFragment(), "Opening Dog Info Fragment")
     }
 
     override fun onFavoriteItemLongClicked(index: Int) {

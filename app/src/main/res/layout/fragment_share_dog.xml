@@ -3,20 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.favoritesFragment.DogInfoFragment"
+    tools:context=".ui.favoritesFragment.ShareDogFragment"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/export_layout"
-        tools:context=".ui.favoritesFragment.DogInfoFragment"
+        tools:context=".ui.favoritesFragment.ShareDogFragment"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            tools:context=".ui.favoritesFragment.DogInfoFragment"
+            tools:context=".ui.favoritesFragment.ShareDogFragment"
             android:layout_height="match_parent"
             android:layout_width="match_parent" >
 

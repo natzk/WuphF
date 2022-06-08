@@ -15,17 +15,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.example.wuphf.BuildConfig
-import com.example.wuphf.databinding.FragmentDogInfoBinding
+import com.example.wuphf.databinding.FragmentShareDogBinding
 import com.example.wuphf.ui.allDogsFragment.AllDogViewModel
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
 
+class ShareDogFragment : Fragment() {
 
-class DogInfoFragment : Fragment() {
-
-    private var _binding : FragmentDogInfoBinding? = null
+    private var _binding : FragmentShareDogBinding? = null
     private val binding get() = _binding!!
 
     private val favoritesViewModel : FavoritesViewModel by activityViewModels()
@@ -36,7 +35,7 @@ class DogInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDogInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentShareDogBinding.inflate(inflater, container, false)
         return binding.root
     }
 

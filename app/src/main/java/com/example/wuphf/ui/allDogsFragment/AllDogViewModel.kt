@@ -20,7 +20,7 @@ class AllDogViewModel @Inject constructor(val dogRepository: DogRepository) : Vi
 
     fun getAllDogs(){
         viewModelScope.launch {
-            var response = dogRepository.getAllDogs()
+            val response = dogRepository.getAllDogs()
 
             if(response.isSuccessful && response.body()?.status.equals("success")){
                 search = response.body()
@@ -41,5 +41,4 @@ class AllDogViewModel @Inject constructor(val dogRepository: DogRepository) : Vi
             dogRepository.removeFromFav(dog)
         }
     }
-
 }

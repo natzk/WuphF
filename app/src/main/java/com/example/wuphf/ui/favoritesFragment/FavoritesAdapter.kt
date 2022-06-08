@@ -51,9 +51,6 @@ class FavoritesAdapter( private val listener : FavoriteListener) : RecyclerView.
             Glide.with(binding.favoriteImage.context)
                 .load(dog.message)
                 .into(binding.favoriteImage)
-
-            //binding.favorite_name.text = dog.name ?: "My NAME"
-            //binding.favorite_number.text = dog.favourite_number
         }
     }
 }
