@@ -13,8 +13,10 @@ import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
 import com.example.wuphf.BuildConfig
 import com.example.wuphf.databinding.FragmentDogInfoBinding
+import com.example.wuphf.ui.allDogsFragment.AllDogViewModel
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -26,7 +28,9 @@ class DogInfoFragment : Fragment() {
     private var _binding : FragmentDogInfoBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel : FavoritesViewModel by activityViewModels()
+    private val favoritesViewModel : FavoritesViewModel by activityViewModels()
+    private val allDogViewModel: AllDogViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,11 +44,12 @@ class DogInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRemoveButton()
         initShareButton()
+        initImage()
     }
 
     private fun initRemoveButton() {
         binding.removeButton.setOnClickListener {
-//            viewModel.removeSelectedItem()
+            allDogViewModel.remove(favoritesViewModel.tempList[favoritesViewModel.selectedDog])
             activity?.onBackPressed()
         }
     }
@@ -78,7 +83,6 @@ class DogInfoFragment : Fragment() {
     }
 
     private fun saveImageExternal(image: Bitmap, filename: String): Uri? {
-        //TODO - Should be processed in another thread
         var uri: Uri? = null
         try {
             val file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), filename)
@@ -90,5 +94,12 @@ class DogInfoFragment : Fragment() {
             Log.d("Debug", "IOException while trying to write file for sharing: " + e.message)
         }
         return uri
+    }
+
+    private fun initImage() {
+        val message = favoritesViewModel.tempList[favoritesViewModel.selectedDog].message
+        Glide.with(binding.dogImage.context)
+            .load(message)
+            .into(binding.dogImage)
     }
 }
