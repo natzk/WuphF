@@ -16,17 +16,25 @@ import javax.inject.Inject
 class FavoritesViewModel @Inject constructor(val dogRepository: DogRepository) : ViewModel() {
 
     var favList: MutableLiveData<Resource<List<Dog>>> = MutableLiveData()
+    var selectedDog: Int = 0
+    lateinit var tempList: List<Dog>
 
     fun getAllFavourites(){
         viewModelScope.launch {
-            var response = dogRepository.getAllFavourites()
+            val response = dogRepository.getAllFavourites()
 
             if(response.isNotEmpty()){
                 favList.postValue(Resource.Success(response))
+                tempList = Resource.Success(response).data!!
             }else{
                 favList.postValue(Resource.Error("Some error occurred, try again"))
+
             }
         }
+    }
+
+    fun select(index: Int) {
+        selectedDog = index
     }
 
     /*

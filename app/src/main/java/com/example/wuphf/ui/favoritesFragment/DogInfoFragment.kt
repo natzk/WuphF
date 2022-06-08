@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
 import com.example.wuphf.BuildConfig
 import com.example.wuphf.databinding.FragmentDogInfoBinding
 import java.io.File
@@ -40,6 +41,7 @@ class DogInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRemoveButton()
         initShareButton()
+        initImage()
     }
 
     private fun initRemoveButton() {
@@ -90,5 +92,12 @@ class DogInfoFragment : Fragment() {
             Log.d("Debug", "IOException while trying to write file for sharing: " + e.message)
         }
         return uri
+    }
+
+    private fun initImage() {
+        val message = viewModel.tempList[viewModel.selectedDog].message
+        Glide.with(binding.dogImage.context)
+            .load(message)
+            .into(binding.dogImage)
     }
 }
