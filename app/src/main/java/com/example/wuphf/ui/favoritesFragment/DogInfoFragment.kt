@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -52,67 +51,44 @@ class DogInfoFragment : Fragment() {
 
     private fun initShareButton() {
         binding.shareButton.setOnClickListener {
-            val b = getBitmapFromView(binding.rootLayout)
-            saveImageExternal(b!!)
+            val bitmap = getBitmapFromView(binding.exportLayout)
 
-            val file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), "to-share.png")
+            val filename = "whupf.png"
+            saveImageExternal(bitmap!!, filename)
+            val file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), filename)
 
-            var temp = FileProvider.getUriForFile(
+            val uri = FileProvider.getUriForFile(
                 Objects.requireNonNull(requireContext()),
-                BuildConfig.APPLICATION_ID + ".provider", file);
+                BuildConfig.APPLICATION_ID + ".provider", file)
 
-            val shareIntent: Intent = Intent().apply {
+            val intent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_STREAM, temp)
+                putExtra(Intent.EXTRA_STREAM, uri)
                 type = "image/png"
             }
-            startActivity(Intent.createChooser(shareIntent, null))
-
-//            val file = File(context?.filesDir, "to-share.png")
-//            val u: Uri = FileProvider.getUriForFile(
-//                requireContext(),
-//                "com.example.wuphf.provider",
-//                file)
-//
-//
-//
-//            val intent = Intent()
-//            intent.setAction(Intent.ACTION_SEND)
-//            intent.setPackage("com.whatsapp")
-//            intent.putExtra(Intent.EXTRA_TEXT, "hi")
-//            intent.putExtra(Intent.EXTRA_STREAM, u)
-//            intent.type = ("image/png")
-
-//            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-
-//            startActivity(intent)
-            // Toast.makeText(context, "DID THIS WORK?", Toast.LENGTH_SHORT).show()
+            startActivity(Intent.createChooser(intent, null))
         }
     }
 
     private fun getBitmapFromView(view: View): Bitmap? {
-        val bitmap =
-            Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         view.draw(canvas)
-        Log.d("test", bitmap.toString())
         return bitmap
     }
 
-    private fun saveImageExternal(image: Bitmap): Uri? {
+    private fun saveImageExternal(image: Bitmap, filename: String): Uri? {
         //TODO - Should be processed in another thread
         var uri: Uri? = null
         try {
-            val file: File =
-                File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), "to-share.png")
+            val file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), filename)
             val stream = FileOutputStream(file)
             image.compress(Bitmap.CompressFormat.PNG, 90, stream)
             stream.close()
             uri = Uri.fromFile(file)
         } catch (e: IOException) {
-            Log.d("TEST", "IOException while trying to write file for sharing: " + e.message)
+            Log.d("Debug", "IOException while trying to write file for sharing: " + e.message)
         }
         return uri
     }
-
 }
