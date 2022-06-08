@@ -17,7 +17,7 @@ class CardStackAdapter(val context: Context): RecyclerView.Adapter<CardStackAdap
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder(inflater.inflate(R.layout.item_spot, parent, false))
+        return ViewHolder(inflater.inflate(R.layout.activity_main, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
