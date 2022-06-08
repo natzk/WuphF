@@ -8,7 +8,6 @@ import com.example.wuphf.data.local.model.Dog
 import com.example.wuphf.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import javax.inject.Inject
 
 
@@ -17,7 +16,7 @@ class FavoritesViewModel @Inject constructor(val dogRepository: DogRepository) :
 
     var favList: MutableLiveData<Resource<List<Dog>>> = MutableLiveData()
     var selectedDog: Int = 0
-    lateinit var tempList: List<Dog>
+    lateinit var extractedList: List<Dog>
 
     fun getAllFavourites(){
         viewModelScope.launch {
@@ -25,7 +24,7 @@ class FavoritesViewModel @Inject constructor(val dogRepository: DogRepository) :
 
             if(response.isNotEmpty()){
                 favList.postValue(Resource.Success(response))
-                tempList = Resource.Success(response).data!!
+                extractedList = Resource.Success(response).data!!
             }else{
                 favList.postValue(Resource.Error("Some error occurred, try again"))
 

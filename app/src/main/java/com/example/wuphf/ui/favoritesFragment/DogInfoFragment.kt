@@ -49,7 +49,7 @@ class DogInfoFragment : Fragment() {
 
     private fun initRemoveButton() {
         binding.removeButton.setOnClickListener {
-            allDogViewModel.remove(favoritesViewModel.tempList[favoritesViewModel.selectedDog])
+            allDogViewModel.remove(favoritesViewModel.extractedList[favoritesViewModel.selectedDog])
             activity?.onBackPressed()
         }
     }
@@ -97,7 +97,7 @@ class DogInfoFragment : Fragment() {
     }
 
     private fun initImage() {
-        val message = favoritesViewModel.tempList[favoritesViewModel.selectedDog].message
+        val message = favoritesViewModel.extractedList[favoritesViewModel.selectedDog].message
         Glide.with(binding.dogImage.context)
             .load(message)
             .into(binding.dogImage)
