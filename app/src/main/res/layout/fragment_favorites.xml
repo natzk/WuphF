@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:textSize="40sp"
         android:padding="5dp"
+        android:fontFamily="@font/jay"
         />
 
     <TextView
@@ -24,8 +25,9 @@
         android:layout_gravity="start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:padding="5dp"
+        android:fontFamily="@font/jay"
         />
 
     <androidx.recyclerview.widget.RecyclerView

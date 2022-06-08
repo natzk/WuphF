@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="170dp"
-    android:background="@color/green"
+    android:background="@color/white"
     android:gravity="bottom"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
@@ -11,13 +11,15 @@
     <ImageView
         android:layout_width="82dp"
         android:layout_height="86dp"
-        android:src="@drawable/dog_nose" />
+        android:src="@drawable/nose_icon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Adapt a friend"
+
+        android:text="WuphF"
+        android:textColor="@color/black"
+        android:paddingStart="20dp"
         android:fontFamily="@font/jay"/>
 
 
