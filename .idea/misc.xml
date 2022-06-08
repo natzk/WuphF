@@ -8,22 +8,21 @@
         <entry key="..\:/Users/shkal/AndroidStudioProjects/WuphF/app/src/main/res/layout/item_layout.xml" value="0.268" />
         <entry key="..\:/Users/shkal/AndroidStudioProjects/WuphF/app/src/main/res/layout/item_spot.xml" value="0.2546875" />
         <entry key="app/src/main/res/drawable/menu_icon.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1470977783203125" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21910400390625004" />
         <entry key="app/src/main/res/layout/contact_layout.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/favorite_item_layout.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_bottom_panel.xml" value="0.3591485507246377" />
-        <entry key="app/src/main/res/layout/fragment_container.xml" value="0.3645833333333333" />
-        <entry key="app/src/main/res/layout/fragment_dog_info.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_faqs.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/fragment_dog_info.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/fragment_faqs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favorite_item_info.xml" value="0.3591485507246377" />
-        <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1650485436893204" />
         <entry key="app/src/main/res/layout/fragment_share.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_swiping.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/item_layout.xml" value="0.15885416666666666" />
         <entry key="app/src/main/res/layout/item_spot.xml" value="0.1468963623046875" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.1915771484375" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.8974227905273438" />
-        <entry key="app/src/main/res/xml/file_paths.xml" value="0.3645833333333333" />
       </map>
     </option>
   </component>
