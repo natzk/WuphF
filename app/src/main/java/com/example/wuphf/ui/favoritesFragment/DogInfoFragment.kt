@@ -51,15 +51,15 @@ class DogInfoFragment : Fragment() {
 
     private fun initShareButton() {
         binding.shareButton.setOnClickListener {
-            val bitmap = getBitmapFromView(binding.rootLayout)
+            val bitmap = getBitmapFromView(binding.exportLayout)
 
-            var filename = "whupf.png"
+            val filename = "whupf.png"
             saveImageExternal(bitmap!!, filename)
             val file = File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), filename)
 
-            var uri = FileProvider.getUriForFile(
+            val uri = FileProvider.getUriForFile(
                 Objects.requireNonNull(requireContext()),
-                BuildConfig.APPLICATION_ID + ".provider", file);
+                BuildConfig.APPLICATION_ID + ".provider", file)
 
             val intent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -91,27 +91,4 @@ class DogInfoFragment : Fragment() {
         }
         return uri
     }
-
 }
-
-
-
-//            val file = File(context?.filesDir, "to-share.png")
-//            val u: Uri = FileProvider.getUriForFile(
-//                requireContext(),
-//                "com.example.wuphf.provider",
-//                file)
-//
-//
-//
-//            val intent = Intent()
-//            intent.setAction(Intent.ACTION_SEND)
-//            intent.setPackage("com.whatsapp")
-//            intent.putExtra(Intent.EXTRA_TEXT, "hi")
-//            intent.putExtra(Intent.EXTRA_STREAM, u)
-//            intent.type = ("image/png")
-
-//            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-
-//            startActivity(intent)
-// Toast.makeText(context, "DID THIS WORK?", Toast.LENGTH_SHORT).show()

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/root_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,6 +9,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/export_layout"
         tools:context=".ui.favoritesFragment.DogInfoFragment"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -39,7 +39,8 @@
         android:padding="5dp"
         android:text="Tap here to add a caption!"
         android:layout_gravity="center"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:maxLength="26"/>
 
     </LinearLayout>
         <LinearLayout
